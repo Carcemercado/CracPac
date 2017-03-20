@@ -21,7 +21,13 @@ public class Movement : MonoBehaviour
             force += new Vector3(0, 0, magnitude);
         }
 
+	if(Input.GetKey(KeyCode.S))
+	{
+	    force += new Vector3(0,0,-magnitude);
+	}
+	
         gameObject.GetComponent<Rigidbody>().AddForce(force);
+	
     }
 
     // Update is called once per frame
