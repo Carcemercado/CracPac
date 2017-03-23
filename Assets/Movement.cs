@@ -14,17 +14,28 @@ public class Movement : MonoBehaviour
 
     void ProcessInput()
     {
-        Vector3 force = new Vector3(0,0,0);
+        Vector3 force = new Vector3(0, 0, 0);
 
-        if(Input.GetKey(KeyCode.W))
+        if (Input.GetKey(KeyCode.W))
         {
             force += new Vector3(0, 0, magnitude);
         }
 
-	if(Input.GetKey(KeyCode.S))
-	{
-	    force += new Vector3(0,0,-magnitude);
-	}
+        if (Input.GetKey(KeyCode.S))
+        {
+            force += new Vector3(0, 0, -magnitude);
+        }
+
+        if (Input.GetKey(KeyCode.A))
+        {
+            force += new Vector3(-magnitude, 0, 0);
+        }
+        if (Input.GetKey(KeyCode.D))
+        {
+            force += new Vector3(magnitude, 0, 0);
+
+        }
+
 	
         gameObject.GetComponent<Rigidbody>().AddForce(force);
 	
